@@ -9,7 +9,7 @@ function initMap() {
         var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
-            };
+        };
         var coordInit = {lat: 42.279594, lng: -83.732124};
         var userReq = document.getElementById("id_UserReq");
 
@@ -17,6 +17,12 @@ function initMap() {
             zoom: 17,
             center: pos
         });
+
+        $.post("load.php", function(data) {
+            var testData = jQuery.parseJSON(data);
+            addMarkers(testData, map);
+        });
+
         userReq.addEventListener('click', function(e) {
             map.setCenter(pos);
             var marker = new google.maps.Marker({
@@ -30,4 +36,14 @@ function initMap() {
             });
         });
     });
+}
+
+function addMarkers(markers, map) {
+    for (var i = 0; i < markers.length; i++) {
+        var loc = markers[i];
+        new google.maps.Marker({
+            position: loc,
+            map: map
+        });
+    }
 }
