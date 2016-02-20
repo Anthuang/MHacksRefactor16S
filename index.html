@@ -4,29 +4,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
     <title>Pinguin</title>
-
-    <!--Link to the claro style from underlying dojo toolkit.  For more info: https://dojotoolkit.org/reference-guide/1.10/dijit/themes.html-->
-    <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
-
-    <!-- Link to Esri css to style widgets, including the map.  More information at: https://developers.arcgis.com/javascript/jshelp/css.html -->
-    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
-
     <link rel="stylesheet" type="text/css" href="css/index.css">
-
-    <!--Access the ArcGIS API for Javascript via the CDN. https://developers.arcgis.com/javascript/jshelp/intro_firstmap_amd.html#step2 .  The API is built on top of Dojo.  For more information check out: https://dojotoolkit.org/-->
-    <script src="http://js.arcgis.com/3.14/"></script>
     <script src="src/jquery.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
 </head>
-<!--Apply the claro css class to the html body-->
-
-<body class="claro">
+<body>
     <header id="id_HeaderWrap">
         <img id="id_Logo" src="src/logo.png"/>
     </header>
-    <!--a div to contain the map-->
-    <div id="id_MapDiv">
-        <div id="id_LocateButton"></div>
-    </div>
+    <div id="id_MapDiv"></div>
+    <button id="id_UserReq">Make a request</button>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmA9zcBCRDeh7PBXvxbNeTrm6KtaOWaY&callback=initMap"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

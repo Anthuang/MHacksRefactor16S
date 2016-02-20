@@ -23,12 +23,5 @@ html, body {
     position: relative;
     padding: 0;
     margin: 0;
-    height: 50%;
-}
-
-#id_LocateButton {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    z-index: 50;
+    height: 75%;
 }
