@@ -1,3 +1,18 @@
+<?php
+
+// starts a session
+session_start();
+
+// check if session with variable username exists
+if (!isset($_SESSION['username'])) { // if not, user is not signed in
+    die("You are not signed in. Redirecting to Sign In Page 5 seconds... or click " . "<a href='index.php'>here</a>". 
+        " to go directly.<script>window.onload = function () {setTimeout(function(){location.href='index.php'} , 5000);}</script>");
+} else { // else, set variable $username equals to user's account
+    $username = $_SESSION['username'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +35,7 @@
             <label>Lost: </label><input id="id_RadLost" type="radio" name="status" value="Lost" checked>
             <label>Found: </label><input id="id_RadFound" type="radio" name="status" value="Found">
             <input type="hidden" id="id_ID" name="id">
+            <input type="hidden" name="username" id="username" value=<?php echo $username; ?>>
         </div>
         <button id="id_SubmitReq" type="button">Submit</button>
     </form>

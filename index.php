@@ -25,8 +25,8 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
         if ($num == 1) {
             $row = $result->fetch_array(MYSQLI_ASSOC);
             if ($password == $row['Password']) {
-                //session_start();
-                //$_SESSION['username'] = $username;
+                session_start();
+                $_SESSION['username'] = $username;
                 echo "Sign in successful. Redirecting to Main Page in 5 seconds... or click " . "<a href='map.php'>here</a>". " to go directly.";
                 echo "<script>window.onload = function () {setTimeout(function(){location.href='map.php'} , 5000);}</script>";
                 die();

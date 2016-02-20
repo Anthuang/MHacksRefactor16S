@@ -15,7 +15,7 @@ $(document).ready(function() {
     })
 })
 
-function initMap() {
+window.initMap = function() {
     navigator.geolocation.getCurrentPosition(function (position) {
         var pos = {
                 lat: position.coords.latitude,
@@ -29,7 +29,8 @@ function initMap() {
             center: pos
         });
 
-        $.post("load.php", function(data) {
+        $.post("load.php", {username: $("#username").val()})
+            .done(function (data) {
             var testData = jQuery.parseJSON(data);
             addMarkers(testData, map);
         });
