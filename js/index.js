@@ -1,9 +1,13 @@
 $(document).ready(function() {
     $("#id_SubmitReq").click(function(){
         $.post( "submit.php", $("#id_ReqForm").serialize())
-            .done(function() {
-                alert("Success!");
-            });
+            .done(function(data) {
+            $("#id_ID").val(data);
+        });
+        if($('#id_RadFound').is(':checked')) {
+            $("#id_ReqForm").attr("action", "found.php");
+            $("#id_ReqForm").submit();
+        }
     })
 
     $("#id_UserReq").click(function(){

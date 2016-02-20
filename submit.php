@@ -2,10 +2,11 @@
 
 require_once "utility.php";
 
-if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['long']) && !empty($_POST['long'])) {
+if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !empty($_POST['lng'])) {
 	$lat = $_POST['lat'];
-	$long = $_POST['long'];
-	queryMysql('INSERT INTO `LongLat` VALUES (null, "'.$lat.'", "'.$long.'")');
+	$lng = $_POST['lng'];
+	queryMysql('INSERT INTO `LongLat` VALUES (null, "'.$lat.'", "'.$lng.'")');
+	echo mysqli_insert_id($connection);
 }
 
 ?>

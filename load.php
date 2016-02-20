@@ -4,7 +4,7 @@ require_once "utility.php";
 
 $array = array();
 
-$result = queryMysql('SELECT `lat`, `lng` FROM `LongLat`');
+$result = queryMysql('SELECT * FROM `LongLat`');
 $num = $result->num_rows;
 if ($num > 0) {
     for ($j = 0; $j < $num; $j++) {

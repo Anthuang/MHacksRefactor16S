@@ -1,22 +1,3 @@
-<?php
-
-require_once "utility.php";
-
-$array = array();
-
-$result = queryMysql('SELECT * FROM `LongLat`');
-$num = $result->num_rows;
-if ($num > 0) {
-    for ($j = 0; $j < $num; $j++) {
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-        $array[] = $row;
-    }
-}
-
-$json = json_encode($array);
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,13 +16,13 @@ $json = json_encode($array);
     <form id="id_ReqForm" method="post">
         <div id="id_ReqWrap">
             <input type="text" placeholder="Latitude" name="lat" id="id_ReqLat"></input>
-            <input type="text" placeholder="Longitude" name="long" id="id_ReqLng"></input>
-            <label>Lost: </label><input type="radio" name="status" value="Lost" checked>
-            <label>Found: </label><input type="radio" name="status" value="Found">
+            <input type="text" placeholder="Longitude" name="lng" id="id_ReqLng"></input>
+            <label>Lost: </label><input id="id_RadLost" type="radio" name="status" value="Lost" checked>
+            <label>Found: </label><input id="id_RadFound" type="radio" name="status" value="Found">
+            <input type="hidden" id="id_ID" name="id">
         </div>
         <button id="id_SubmitReq" type="button">Submit</button>
     </form>
-
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmA9zcBCRDeh7PBXvxbNeTrm6KtaOWaY&callback=initMap"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
