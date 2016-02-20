@@ -14,7 +14,7 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 	if (isset($_POST['item']) && !empty($_POST['item']) && isset($_POST['date']) && !empty($_POST['date']) &&
 		isset($_POST['time']) && !empty($_POST['time']) && isset($_POST['q1']) && !empty($_POST['q1']) &&
 		isset($_POST['q2']) && !empty($_POST['q2']) && isset($_POST['q3']) && !empty($_POST['q3']) &&
-		isset($_POST['found']) && !empty($_POST['found']) && isset($_POST['id']) && !empty($_POST['id'])) {
+		isset($_POST['found']) && !empty($_POST['found'])) {
 
 		$item = $_POST['item'];
 		$date = $_POST['date'];
@@ -23,9 +23,10 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 		$q2 = $_POST['q2'];
 		$q3 = $_POST['q3'];
 		$found = $_POST['found'];
-		$id = $_POST['id'];
 		queryMysql('INSERT INTO `LostAndFound` VALUES ("'.$id.'", "'.$item.'", "'.$lat.'", "'.$lng.'", "'.$date.'", "'.$time.'", "'.$q1.'", "'.$q2.'", "'.$q3.'", "'.$found.'")');
 	}
+} else {
+	die("Something went wrong.");
 }
 
 ?>
@@ -54,3 +55,9 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 	</form>
 </body>
 </html>
+
+<?php
+
+mysqli_close($connection);
+
+?>

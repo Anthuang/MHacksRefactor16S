@@ -1,23 +1,22 @@
 $(document).ready(function() {
-    $("#id_SubmitReq").click(function(){
-        $.post( "submit.php", $("#id_ReqForm").serialize())
-            .done(function(data) {
+    $("#id_SubmitReq").click(function() {
+        $.post("submit.php", $("#id_ReqForm").serialize())
+            .done(function (data) {
             $("#id_ID").val(data);
+            if($('#id_RadFound').is(':checked')) {
+                $("#id_ReqForm").submit();
+            }
         });
-        if($('#id_RadFound').is(':checked')) {
-            $("#id_ReqForm").attr("action", "found.php");
-            $("#id_ReqForm").submit();
-        }
-    })
+    });
 
-    $("#id_UserReq").click(function(){
+    $("#id_UserReq").click(function() {
         $("#id_ReqForm").addClass("c_SubAppear");
         $("#id_ReqWrap").addClass("c_ReqReturn");
     })
 })
 
 function initMap() {
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
         var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
@@ -35,7 +34,7 @@ function initMap() {
             addMarkers(testData, map);
         });
 
-        userReq.addEventListener('click', function(e) {
+        userReq.addEventListener('click', function (e) {
             map.setCenter(pos);
             document.getElementById('id_ReqLat').value = pos.lat.toFixed(3);
             document.getElementById('id_ReqLng').value = pos.lng.toFixed(3);

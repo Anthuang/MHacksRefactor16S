@@ -13,7 +13,7 @@
     </header>
     <div id="id_MapDiv"></div>
     <button id="id_UserReq">Make a request</button>
-    <form id="id_ReqForm" method="post">
+    <form id="id_ReqForm" action="found.php" method="post">
         <div id="id_ReqWrap">
             <input type="text" placeholder="Latitude" name="lat" id="id_ReqLat"></input>
             <input type="text" placeholder="Longitude" name="lng" id="id_ReqLng"></input>
