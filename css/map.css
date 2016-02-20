@@ -105,3 +105,10 @@ label {
 .c_SubAppear {
     z-index: 3 !important;
 }
+
+#id_RadioWrap {
+    display: inline-block;
+    background: #FFF;
+    opacity: 0.8;
+    padding: 5px 10px;
+}

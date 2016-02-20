@@ -35,6 +35,10 @@ window.initMap = function() {
             addMarkers(testData, map);
         });
 
+        google.maps.event.addListenerOnce(map, 'idle', function(){
+            alert('loaded!');
+        })
+
         userReq.addEventListener('click', function (e) {
             map.setCenter(pos);
             document.getElementById('id_ReqLat').value = pos.lat.toFixed(3);
