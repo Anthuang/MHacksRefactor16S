@@ -5,6 +5,9 @@ $(document).ready(function() {
             $("#id_ID").val(data);
             if($('#id_RadFound').is(':checked')) {
                 $("#id_ReqForm").submit();
+            } else if ($('#id_RadLost').is(':checked')) {
+                $("#id_ReqForm").attr("action", "lost.php");
+                $("#id_ReqForm").submit();
             }
         });
     });
