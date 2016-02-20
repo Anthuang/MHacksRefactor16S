@@ -27,7 +27,7 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
         <ul>
             <a href="#About"><li class="c_NavItem">About</li></a>
             <a href="#Contact"><li class="c_NavItem">Contact Us</li></a>
-            <a href="#Signup"><li class="c_NavItem">Sign Up</li></a>
+            <a href="#Signup"><li class="c_NavItem">Sign Up/Sign In</li></a>
         </ul>
     </div>
     <div class="c_Section">
@@ -41,13 +41,23 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
         <div>Pinguin It is founded by <br>Anthony Huang anthuang@umich.edu,<br>Thomas Huang thomaseh@umich.edu,<br>and Anton Yang ayangz@umich.edu</div>
     </div>
     <div class="c_Section">
-        <a name="Signup">a</a>
-        <h1>Sign Up</h1>
-        <form action="main.php" method="post">
-            <label>Username</label><input name="username" type="text"></input><br>
-            <label>Password</label><input name="password" type="text"></input><br>
-            <button>Submit</button>
-        </form>
+        <div class="c_UserSection">
+            <a name="Signup">a</a>
+            <h1>Sign Up</h1>
+            <form action="main.php" method="post">
+                <label>Username</label><input name="username" type="text"></input><br>
+                <label>Password</label><input name="password" type="text"></input><br>
+                <button>Register</button>
+            </form>
+        </div>
+        <div class="c_UserSection">
+            <h1>Sign In</h1>
+            <form>
+                <label>Username</label><input name="username" type="text"></input><br>
+                <label>Password</label><input name="password" type="text"></input><br>
+                <button>Log In</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
