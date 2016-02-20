@@ -1,6 +1,14 @@
 $(document).ready(function() {
     $("#id_SubmitReq").click(function(){
-        $.post( "submit.php", $("#id_ReqForm").serialize());
+        $.post( "submit.php", $("#id_ReqForm").serialize())
+            .done(function() {
+                alert("Success!");
+            });
+    })
+
+    $("#id_UserReq").click(function(){
+        $("#id_ReqForm").addClass("c_SubAppear");
+        $("#id_ReqWrap").addClass("c_ReqReturn");
     })
 })
 
@@ -25,11 +33,14 @@ function initMap() {
 
         userReq.addEventListener('click', function(e) {
             map.setCenter(pos);
+            document.getElementById('id_ReqLat').value = pos.lat.toFixed(3);
+            document.getElementById('id_ReqLng').value = pos.lng.toFixed(3);
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
                 draggable:true
             });
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
             google.maps.event.addListener(marker, 'dragend', function (evt) {
                 document.getElementById('id_ReqLat').value = evt.latLng.lat().toFixed(3);
                 document.getElementById('id_ReqLng').value = evt.latLng.lng().toFixed(3);
@@ -41,9 +52,21 @@ function initMap() {
 function addMarkers(markers, map) {
     for (var i = 0; i < markers.length; i++) {
         var loc = markers[i];
-        new google.maps.Marker({
+        var marker = new google.maps.Marker({
             position: loc,
             map: map
         });
+        var contentString = '<div id="content">'+ loc.lat + ', ' + loc.lng + '</div>';
+        attachInformation(marker, contentString);
     }
+}
+
+function attachInformation(marker, contentString) {
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+    marker.addListener('click', function() {
+        infowindow.open(marker.get('map'), marker);
+    });
 }
