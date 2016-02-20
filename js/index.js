@@ -30,7 +30,7 @@ require([
     //Create a new map. To see all the map constructors go to: https://developers.arcgis.com/javascript/jsapi/map-amd.html#map1
     map = new Map("id_MapDiv", {
       //set basemap to topo.  All the ArcGIS basemap options: "streets" , "satellite" , "hybrid", "topo", "gray", "dark-gray", "oceans", "national-geographic", "terrain", "osm", "terrain" and "dark-gray".
-      basemap: "dark-gray",
+      basemap: "gray",
       //Center the map at a Lat Long coordinate.  To find a lat long, type in "<City Name of your choice> lat long" into a browser search.
       center: [-83.732124, 42.279594],
       //Zoom level to start at, based on the basemap.

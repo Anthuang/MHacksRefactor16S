@@ -7,7 +7,20 @@ html, body {
     height: 100%;
 }
 
+/*Header*/
+#id_HeaderWrap {
+    height: 100px;
+    background: #00BFFF;
+    border-bottom: 2px solid #FFF;
+    text-align: center;
+}
+#id_Logo {
+    margin: 5px 0;
+    height: 90px;
+}
+
 #id_MapDiv {
+    position: relative;
     padding: 0;
     margin: 0;
     height: 50%;
@@ -15,7 +28,7 @@ html, body {
 
 #id_LocateButton {
     position: absolute;
-    top: 95px;
+    top: 100px;
     left: 20px;
     z-index: 50;
 }
