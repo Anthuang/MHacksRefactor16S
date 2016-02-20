@@ -1,0 +1,21 @@
+html {
+    background: #222;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#id_MapDiv {
+    padding: 0;
+    margin: 0;
+    height: 50%;
+}
+
+#id_LocateButton {
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 50;
+}
