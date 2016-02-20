@@ -1,0 +1,96 @@
+html {
+    background: #222;
+    overflow-x: hidden;
+    font-family: "Montserrat", helvetica;
+}
+body {
+    margin: 0;
+}
+h1 {
+    margin: 0;
+    font-size: 100px;
+}
+ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline-block;
+    height: 100%;
+    width: 15%;
+    margin: 0 2.5%;
+}
+li:hover {
+    background: #00AEEE;
+}
+a {
+    color: #000;
+    line-height: 50px;
+}
+.c_Section a {
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+form {
+    width: 80%;
+    display: inline-block;
+    margin-top: 80px;
+    text-align: right;
+}
+form input {
+    width: 80%;
+    height: 50px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 5px 5px 5px 20px;
+    font-size: 20px;
+}
+label {
+    margin-right: 10px;
+    font-size: 20px;
+}
+#id_HeaderWrap {
+    width: 100%;
+    padding: 0 10px;
+    top: 0;
+    height: 100px;
+    background: #00BFFF;
+    border: none;
+    border-bottom: 1px solid #EFEFEF;
+    text-align: center;
+    z-index: 1;
+}
+#id_Logo {
+    margin: 5px 0;
+    height: 90px;
+}
+
+#id_NavBar {
+    text-align: center;
+    height: 50px;
+    background: #00BFFF;
+    border-bottom: 2px solid #FFF;
+}
+
+.c_Section {
+    padding: 80px 0 0 40px;
+    height: 700px;
+    border-bottom: 1px solid #FFF;
+    background: #A0C65C;
+}
+.c_Section div {
+    color: #EFEFEF;
+    font-size: 30px;
+    margin-top: 40px;
+}
+.c_NavFixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.c_BodyShift {
+    margin-top: 50px;
+}
