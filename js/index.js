@@ -1,3 +1,9 @@
+$(document).ready(function() {
+    $("#id_SubmitReq").click(function(){
+        $.post( "submit.php", $("#id_ReqForm").serialize());
+    })
+})
+
 function initMap() {
     navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {

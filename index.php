@@ -1,3 +1,22 @@
+<?php
+
+require_once "utility.php";
+
+$array = array();
+
+$result = queryMysql('SELECT * FROM `LongLat`');
+$num = $result->num_rows;
+if ($num > 0) {
+    for ($j = 0; $j < $num; $j++) {
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        $array[] = $row;
+    }
+}
+
+$json = json_encode($array);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +32,9 @@
     </header>
     <div id="id_MapDiv"></div>
     <button id="id_UserReq">Make a request</button>
-    <input id="id_ReqLat"></input>
-    <input id="id_ReqLng"></input>
-    <button id="id_SubmitReq">Submit</button>
+    <form id="id_ReqForm" method="post"><input name="lat" id="id_ReqLat"></input>
+    <input name="long" id="id_ReqLng"></input>
+    <button id="id_SubmitReq" type="button">Submit</button></form>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmA9zcBCRDeh7PBXvxbNeTrm6KtaOWaY&callback=initMap"></script>
     <script type="text/javascript" src="js/index.js"></script>
