@@ -23,7 +23,7 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 		$q2 = $_POST['q2'];
 		$q3 = $_POST['q3'];
 		$found = $_POST['found'];
-		queryMysql('INSERT INTO `LostAndFound` VALUES ("'.$id.'", "'.$item.'", "'.$lat.'", "'.$lng.'", "'.$date.'", "'.$time.'", "'.$q1.'", "'.$q2.'", "'.$q3.'", "'.$found.'")');
+		queryMysql('INSERT INTO `LostAndFound` VALUES ("'.$id.'", "'.$user.'", "'.$item.'", "'.$lat.'", "'.$lng.'", "'.$date.'", "'.$time.'", "'.$q1.'", "'.$q2.'", "'.$q3.'", "'.$found.'")');
 	}
 } else {
 	die("Something went wrong.");

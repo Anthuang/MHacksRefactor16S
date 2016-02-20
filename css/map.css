@@ -1,0 +1,107 @@
+html {
+    background: #222;
+    overflow: hidden;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+button, input {
+    padding: 0;
+    outline: none;
+}
+
+#id_HeaderWrap {
+    position: absolute;
+    padding: 0 10px;
+    top: 0;
+    height: 100px;
+    background: #00BFFF;
+    border: none;
+    border-right: 2px solid #FFF;
+    border-bottom: 2px solid #FFF;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    z-index: 1;
+}
+#id_Logo {
+    margin: 5px 0;
+    height: 90px;
+}
+
+#id_MapDiv {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    background: white url("../src/loading.gif") no-repeat 50% 50%;
+}
+
+#id_UserReq {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background: #222;
+    border: none;
+    color: #FFF;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#id_UserReq:hover {
+    background: #00BFFF;
+}
+
+#id_ReqForm {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 20%;
+    bottom: 0;
+}
+#id_ReqWrap {
+    position: relative;
+    top: 100px;
+    transition: all 0.5s linear 0s;
+}
+.c_ReqReturn {
+    top: 0 !important;
+}
+input[type=text] {
+    font-size: 20px;
+    color: #000;
+    opacity: 0.8;
+    width: 15%;
+    height: 30%;
+    margin: 0;
+    padding: 5px 10px 5px 30px;
+    border: none
+}
+label {
+    font-size: 20px;
+    color: #333;
+    font-family: helvetica;
+}
+#id_ReqLat {
+    margin-left: 1%;
+}
+#id_SubmitReq {
+    position: absolute;
+    left: 0;
+    border: none;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    margin: 0;
+    font-size: 20px;
+    color: #FFF;
+    background: #222;
+}
+#id_SubmitReq:hover {
+    background: #00BFFF;
+}
+.c_SubAppear {
+    z-index: 3 !important;
+}

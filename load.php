@@ -4,7 +4,7 @@ require_once "utility.php";
 
 $array = array();
 
-$result = queryMysql('SELECT * FROM `LongLat`');
+$result = queryMysql('SELECT * FROM `LongLat` WHERE `User`="'.$user.'"');
 $num = $result->num_rows;
 if ($num > 0) {
     for ($j = 0; $j < $num; $j++) {
