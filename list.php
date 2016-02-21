@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link type = "text/css" rel = "stylesheet" href = "css/list.css" />
-	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="src/logowithouttext.png" />
+    <link type = "text/css" rel = "stylesheet" href = "css/list.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <title>Pinguin - List</title>
     <script src="src/jquery.js"></script>
     <script src="js/list.js"></script>
 </head>
 <body>
-
+<header id="id_HeaderWrap">
+        <img id="id_Logo" src="src/logo.png"/>
+    </header>
+    <div id="id_NavBar">
+        <ul>
+            <a href="#About"><li class="c_NavItem">About</li></a>
+            <a href="#Contact"><li class="c_NavItem">Contact Us</li></a>
+        </ul>
+    </div>
 <form action="list.php" method="post">
 	<label>Ordering: </label><select name="selector">
 	  <option value="MarkerIdx">ID</option>
@@ -20,7 +29,7 @@
 	<button>Enter</button>
 </form>
 
-<?php
+<!-- <?php
 
 require_once "utility.php";
 
@@ -58,7 +67,7 @@ if ($num > 0) {
 	}
 }
 
-?>
+?> -->
 
 <form id="id_ListForm" action="found.php" method="post">
     <input type="hidden" name="lat" id="id_ReqLat">
