@@ -27,7 +27,7 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
             if ($password == $row['Password']) {
                 session_start();
                 $_SESSION['username'] = $username;
-                echo "Sign in successful. Redirecting to Main Page in 5 seconds... or click " . "<a href='map.php'>here</a>". " to go directly.";
+                echo "Sign in successful. Redirecting to Map Page in 5 seconds... or click " . "<a href='map.php'>here</a>". " to go directly.";
                 echo "<script>window.onload = function () {setTimeout(function(){location.href='map.php'} , 5000);}</script>";
                 die();
             } else { // password is wrong
@@ -63,7 +63,17 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
         <ul>
             <a href="#About"><li class="c_NavItem">About</li></a>
             <a href="#Contact"><li class="c_NavItem">Contact Us</li></a>
-            <a href="#Signup"><li class="c_NavItem">Sign Up/Sign In</li></a>
+            <?php
+
+            session_start();
+
+            if (!isset($_SESSION['username'])) { // not logged in
+                echo '<a href="#Signup"><li class="c_NavItem">Sign Up/Sign In</li></a>';
+            } else { // logged in
+                echo '<a href="signout.php"><li class="c_NavItem">Sign Out</li></a>';
+            }
+
+            ?>
         </ul>
     </div>
     <div class="c_Section">
@@ -79,27 +89,41 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
         <div>Pinguin It is founded by <br>Anthony Huang anthuang@umich.edu,<br>Thomas Huang thomaseh@umich.edu,<br>and Anton Yang ayangz@umich.edu.<br>
         Contact us if you have any questions or suggestions!</div>
     </div>
-    <div class="c_Section">
-        <div class="c_UserSection">
-            <a name="Signup">a</a>
-            <h1>Sign Up</h1>
-            <form action="index.php" method="post">
-                <label>Username</label><input name="username" type="text"></input><br>
-                <label>Password</label><input name="password" type="password"></input><br>
-                <input type="hidden" name="is_signup" value="1">
-                <button>Register</button>
-            </form>
-        </div>
-        <div class="c_UserSection">
-            <h1>Sign In</h1>
-            <form action="index.php" method="post">
-                <label>Username</label><input name="username" type="text"></input><br>
-                <label>Password</label><input name="password" type="password"></input><br>
-                <input type="hidden" name="is_signin" value="1">
-                <button>Log In</button>
-            </form>
-        </div>
+
+    <?php
+
+    if (!isset($_SESSION['username'])) { // not logged in
+echo <<<_END
+
+<div class="c_Section">
+    <div class="c_UserSection">
+        <a name="Signup">a</a>
+        <h1>Sign Up</h1>
+        <form action="index.php" method="post">
+            <label>Username</label><input name="username" type="text"></input><br>
+            <label>Password</label><input name="password" type="password"></input><br>
+            <input type="hidden" name="is_signup" value="1">
+            <button>Register</button>
+        </form>
     </div>
+    <div class="c_UserSection">
+        <h1>Sign In</h1>
+        <form action="index.php" method="post">
+            <label>Username</label><input name="username" type="text"></input><br>
+            <label>Password</label><input name="password" type="password"></input><br>
+            <input type="hidden" name="is_signin" value="1">
+            <button>Log In</button>
+        </form>
+    </div>
+</div>
+
+_END;
+
+    } else { // logged in
+        
+    }
+
+    ?>
     <footer class="footer_class">
         <p class="msg_footer">Enjoy your stay. Don't forget your belongings!</p>
         <p class="info_footer">Pinguinit.net &#169; 2016</p>
