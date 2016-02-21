@@ -27,7 +27,7 @@ select{
 }
 
 .itemList > li{
-	padding-left: 10px;
+	-left: 10px;
 }
 
 .class_ListID {
@@ -92,6 +92,11 @@ a {
 
 
 body{
-	margin: 0;
+	margin: 5px;
 }
 
+#main{
+	margin: none;
+	height: 100px;
+	width; 100px
+}
