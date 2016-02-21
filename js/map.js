@@ -39,7 +39,7 @@ window.initMap = function() {
         });
 
         google.maps.event.addListenerOnce(map, 'idle', function(){
-            alert('loaded!');
+            document.getElementById("id_UserReq").disabled = false;
         })
 
         userReq.addEventListener('click', function (e) {

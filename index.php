@@ -70,6 +70,7 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
             if (!isset($_SESSION['username'])) { // not logged in
                 echo '<a href="#Signup"><li class="c_NavItem">Sign Up/Sign In</li></a>';
             } else { // logged in
+                echo '<a href="map.php"><li class="c_NavItem">Maps</li></a>';
                 echo '<a href="signout.php"><li class="c_NavItem">Sign Out</li></a>';
             }
 
@@ -82,6 +83,10 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
         <div>Pinguin It is devoted to assist people in recovering or returning personal belongings that they either lost or found. We aim to provide a platform where people can
          find their precious possessions easily, without having to resort to Facebook or Twitter. We provide a fast, secure, and reliable network, all to shorten the distance
          people and their lost belongings.</div>
+    </div>
+    <div class="c_Section c_ImageWrapper">
+        <img id="id_Demo" src="src/demo.png">
+        <div>See data on a map!</div>
     </div>
     <div class="c_Section">
         <a name="Contact">a</a>
@@ -120,7 +125,7 @@ echo <<<_END
 _END;
 
     } else { // logged in
-        
+
     }
 
     ?>

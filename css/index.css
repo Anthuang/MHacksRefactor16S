@@ -76,12 +76,16 @@ label {
     background: #00BFFF;
     border-bottom: 2px solid #FFF;
 }
+#id_Demo {
+    width: 90%;
+    margin: 0 auto;
+}
 
 .c_Section {
-    padding: 80px 0 0 40px;
-    height: 700px;
+    padding: 80px 0 120px 40px;
+    /*height: 700px;*/
     border-bottom: 1px solid #FFF;
-    background: #A0C65C;
+    background: #B1D76D;
 }
 .c_UserSection {
     display: inline-block;
@@ -101,9 +105,11 @@ label {
 .c_BodyShift {
     margin-top: 50px;
 }
+
 .c_UserSection form {
     width: 80%;
 }
+
 .footer_class{
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -112,6 +118,11 @@ label {
     text-align: center;
     font: normal 18px sans-serif;
     padding: 45px;
+}
+
+.c_ImageWrapper {
+    padding: 20px 0;
+    text-align: center;
 }
 
 .footer_class .msg_footer{

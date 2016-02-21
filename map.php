@@ -24,10 +24,10 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
 </head>
 <body>
     <header id="id_HeaderWrap">
-        <img id="id_Logo" src="src/logo.png"/>
+        <a href="index.php"><img id="id_Logo" src="src/logo.png"/></a>
     </header>
     <div id="id_MapDiv"></div>
-    <button id="id_UserReq">Make a request</button>
+    <button id="id_UserReq" disabled="true">Make a request</button>
     <form id="id_ReqForm" action="found.php" method="post">
         <div id="id_ReqWrap">
             <input type="text" placeholder="Latitude" name="lat" id="id_ReqLat"></input>
