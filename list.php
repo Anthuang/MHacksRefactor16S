@@ -16,7 +16,7 @@
     </header>
     <div id="id_NavBar">
         <ul>
-            <a href="#About"><li class="c_NavItem">About</li></a>
+            <a href="map.php"><li class="c_NavItem">Map</li></a>
             <a href="#Contact"><li class="c_NavItem">Contact Us</li></a>
         </ul>
     </div>
@@ -65,16 +65,16 @@ if ($num > 0) {
 		$found = $row['Found'];
 		if ($found) {
 			if ($username == $user) {
-				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by You</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
+				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by You</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
 			} else {
-				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by '.$user.'</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
+				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by '.$user.'</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
 			}
 		}
 		else {
 			if ($username == $user) {
-				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by You</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
+				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by You</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
 			} else {
-				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by '.$user.'</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
+				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by '.$user.'</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
 			}
 		}
 	}

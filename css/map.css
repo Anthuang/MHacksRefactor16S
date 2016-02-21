@@ -128,6 +128,30 @@ label {
     padding-right: 3px;
 }
 
+.class_MarkerMine {
+    background-color: #00BFFF;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", helvetica;
+    border: none;
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.class_MarkerHave {
+    background-color: #00BFFF;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", helvetica;
+    border: none;
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 .class_MarkerEdit:hover {
     background-color: #00AEEE;
 }
