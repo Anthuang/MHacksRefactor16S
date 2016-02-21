@@ -19,7 +19,7 @@
             <a href="map.php"><li class="c_NavItem">Map</li></a>
         </ul>
     </div>
-<a href="#"><button id="back2top">TOP</button></a>
+<div id="right"><a href="#"><button id="back2top">TOP</button></a></div>
 <form action="list.php" method="post">
 	<label>Ordering: </label><select name="selector">
 	  <option value="MarkerIdx">ID</option>
@@ -29,7 +29,7 @@
 	<button>Enter</button>
 </form>
 
-<?php
+<!-- <?php
 
 require_once "utility.php";
 
@@ -80,7 +80,7 @@ if ($num > 0) {
 	}
 }
 
-?>
+?> -->
 
 <form id="id_ListForm" action="found.php" method="post">
     <input type="hidden" name="lat" id="id_ReqLat">
