@@ -27,16 +27,21 @@ select{
 }
 
 #back2top {
+    float: right;
+    margin-right: 0.313em;
+    clear: both;
     position: fixed;
     color: black;
     background-color: #ffff00;
     height:3.125em;
     width: 3.125em;
     border: 0.063em solid black;
-    float: right;
+    
 }
 
 #back2top:hover {
+    -moz-transition: background .25s ease-in-out;
+    -webkit-transition: background .25s ease-in-out;
     border: 0.063em solid white;
     background-color: #00BFFF;
 }
