@@ -70,7 +70,8 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
             if (!isset($_SESSION['username'])) { // not logged in
                 echo '<a href="#Signup"><li class="c_NavItem">Sign Up/Sign In</li></a>';
             } else { // logged in
-                echo '<a href="map.php"><li class="c_NavItem">Maps</li></a>';
+                echo '<a href="map.php"><li class="c_NavItem">Map</li></a>';
+                echo '<a href="list.php"><li class="c_NavItem">List</li></a>';
                 echo '<a href="signout.php"><li class="c_NavItem">Sign Out</li></a>';
             }
 

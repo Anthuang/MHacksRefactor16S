@@ -23,6 +23,19 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 	$lat = $_POST['lat'];
 	$lng = $_POST['lng'];
 
+	$result = queryMysql('SELECT * FROM `LostAndFound` WHERE `MarkerIdx`='.$id);
+	$num = $result->num_rows;
+	if ($num > 0) {
+		$row = $result->fetch_array(MYSQLI_ASSOC);
+		$item = $row['Item'];
+		$date = $row['MarkerDate'];
+		$time = $row['MarkerTime'];
+		$q1 = $row['One'];
+		$q2 = $row['Two'];
+		$q3 = $row['Three'];
+		$found = $row['Found'];
+	}
+
 	if (isset($_POST['item']) && isset($_POST['date']) && isset($_POST['time']) && isset($_POST['q1']) && isset($_POST['q2']) &&
 		isset($_POST['q3']) && isset($_POST['found'])) {
 
@@ -82,14 +95,15 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 	    <label>Date: </label><input type="text" placeholder="MM/DD/YYYY" maxlength="10" name="date" value=<?php echo $date; ?>></input><br>
 	    <label>Time: </label><input type="text" placeholder="HH:MM" maxlength="5" name="time" value=<?php echo $time; ?>></input><br>
 	    <h2>Create three questions about the item (make it specific!):</h2>
-	    <label>Question 1: </label><input type="text" placeholder="Question 1" maxlength="128" name="q1" value=<?php echo $q1; ?>></input><br>
-	    <label>Quesiton 2: </label><input type="text" placeholder="Question 2" maxlength="128" name="q2" value=<?php echo $q2; ?>></input><br>
-	    <label>Question 3: </label><input type="text" placeholder="Question 3" maxlength="128" name="q3" value=<?php echo $q3; ?>></input><br>
+	    <label>Question 1: </label><input type="text" placeholder="Question 1" maxlength="128" name="q1" value=<?php echo '"'.$q1.'"' ?>></input><br>
+	    <label>Quesiton 2: </label><input type="text" placeholder="Question 2" maxlength="128" name="q2" value=<?php echo '"'.$q2.'"' ?>></input><br>
+	    <label>Question 3: </label><input type="text" placeholder="Question 3" maxlength="128" name="q3" value=<?php echo '"'.$q3.'"' ?>></input><br>
 	    <input type="hidden" name="id" value=<?php echo $id; ?>>
 	    <input type="hidden" name="found" value="1">
 	    <input type="hidden" name="username" value=<?php echo $user; ?>>
-	    <button>Submit</button>
+	    <button id="id_SubmitButton">Submit</button>
 	</form>
+	<button>Back</button>
 	<div id="id_SucMes"><?php echo $message; ?></div>
 </body>
 </html>

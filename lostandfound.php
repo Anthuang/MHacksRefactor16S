@@ -13,7 +13,7 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
     $username = $_SESSION['username'];
 }
 
-$lat = $lng = $item = $date = $time = $f1 = $f2 = $f3 = $lost = $id = $user = $message = "";
+$lat = $lng = $item = $date = $time = $one = $two = $three = $found = $id = $user = $message = "";
 
 if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !empty($_POST['lng']) && isset($_POST['id']) && !empty($_POST['id']) &&
 	isset($_POST['username']) && !empty($_POST['username'])) {
@@ -27,33 +27,32 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
 	$num = $result->num_rows;
 	if ($num > 0) {
 		$row = $result->fetch_array(MYSQLI_ASSOC);
-		$item = $row['Item'];
-		$date = $row['MarkerDate'];
-		$time = $row['MarkerTime'];
-		$f1 = $row['One'];
-		$f2 = $row['Two'];
-		$f3 = $row['Three'];
-		$found = $row['Found'];
+		$item = $row['item'];
+		$date = $row['date'];
+		$time = $row['time'];
+		$one = $row['one'];
+		$two = $row['two'];
+		$three = $row['three'];
+		$found = $row['found'];
 	}
 
-	if (isset($_POST['item']) && isset($_POST['date']) && isset($_POST['time']) && isset($_POST['f1']) && isset($_POST['f2']) &&
-		isset($_POST['f3']) && isset($_POST['lost'])) {
+	if (isset($_POST['item']) && isset($_POST['date']) && isset($_POST['time']) && isset($_POST['one']) && isset($_POST['two']) &&
+		isset($_POST['three']) && isset($_POST['found'])) {
 
 		$item = $_POST['item'];
 		$date = $_POST['date'];
 		$time = $_POST['time'];
-		$f1 = $_POST['f1'];
-		$f2 = $_POST['f2'];
-		$f3 = $_POST['f3'];
-		$lost = $_POST['lost'];
+		$one = $_POST['one'];
+		$two = $_POST['two'];
+		$three = $_POST['three'];
+		$found = $_POST['found'];
 		$result = queryMysql('SELECT * FROM `LostAndFound` WHERE `MarkerIdx`='.$id);
 		$num = $result->num_rows;
-		if ($num != 0) {
-			queryMysql('DELETE FROM `LostAndFound` WHERE `MarkerIdx`='.$id);
+		if ($num == 0) {
+			queryMysql('INSERT INTO `LostAndFound` VALUES ("'.$id.'", "'.$user.'", "'.$item.'", "'.$lat.'", "'.$lng.'", "'.$date.'", "'.$time.'", "'.$one.'", "'.$two.'", "'.$three.'", "'.$found.'")');
 		}
-		queryMysql('INSERT INTO `LostAndFound` VALUES ("'.$id.'", "'.$user.'", "'.$item.'", "'.$lat.'", "'.$lng.'", "'.$date.'", "'.$time.'", "'.$f1.'", "'.$f2.'", "'.$f3.'", "'.!$lost.'")');
 		$message = "Success!";
-	} else if (isset($_POST['lost']) && !empty($_POST['lost'])) {
+	} else if (isset($_POST['found']) && !empty($_POST['found'])) {
 		$result = queryMysql('SELECT * FROM `LongLat` WHERE `Idx`='.$id);
 		$num = $result->num_rows;
 		if ($num > 0) {
@@ -89,22 +88,21 @@ if (isset($_POST['lat']) && !empty($_POST['lat']) && isset($_POST['lng']) && !em
     <header id="id_HeaderWrap">
         <a href="index.php"><img id="id_Logo" src="src/logo.png"/></a>
     </header>
-	<form action="lost.php" id="id_LostForm" method="post">
+	<form action="found.php" id="id_FoundForm" method="post">
 	    <label>Item: </label><input type="text" placeholder="Item" maxlength="32" name="item" value=<?php echo $item; ?>></input><br>
 	    <label>Latitude: </label><input type="text" placeholder="Latitude" name="lat" value=<?php echo $lat; ?>></input><br>
 	    <label>Longitude: </label><input type="text" placeholder="Longitude" name="lng" value=<?php echo $lng; ?>></input><br>
 	    <label>Date: </label><input type="text" placeholder="MM/DD/YYYY" maxlength="10" name="date" value=<?php echo $date; ?>></input><br>
 	    <label>Time: </label><input type="text" placeholder="HH:MM" maxlength="5" name="time" value=<?php echo $time; ?>></input><br>
-	    <h2>Create three facts about the item (make it specific!):</h2>
-	    <label>Fact 1: </label><input type="text" placeholder="Fact 1" maxlength="128" name="f1" value=<?php echo '"'.$f1.'"'; ?>></input><br>
-	    <label>Fact 2: </label><input type="text" placeholder="Fact 2" maxlength="128" name="f2" value=<?php echo '"'.$f2.'"'; ?>></input><br>
-	    <label>Fact 3: </label><input type="text" placeholder="Fact 3" maxlength="128" name="f3" value=<?php echo '"'.$f3.'"'; ?>></input><br>
+	    <h2>Create three questions about the item (make it specific!):</h2>
+	    <label>Question 1: </label><input type="text" placeholder="Question 1" maxlength="128" name="one" value=<?php echo '"'.$one.'"' ?>></input><br>
+	    <label>Quesiton 2: </label><input type="text" placeholder="Question 2" maxlength="128" name="two" value=<?php echo '"'.$two.'"' ?>></input><br>
+	    <label>Question 3: </label><input type="text" placeholder="Question 3" maxlength="128" name="three" value=<?php echo '"'.$three.'"' ?>></input><br>
 	    <input type="hidden" name="id" value=<?php echo $id; ?>>
-	    <input type="hidden" name="lost" value="1">
+	    <input type="hidden" name="found" value=<?php echo $found ?>>
 	    <input type="hidden" name="username" value=<?php echo $user; ?>>
-	    <button id="id_SubmitButton">Submit</button>
+	    <button>Submit</button>
 	</form>
-	<button>Back</button>
 	<div id="id_SucMes"><?php echo $message; ?></div>
 </body>
 </html>

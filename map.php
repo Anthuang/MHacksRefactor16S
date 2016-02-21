@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-    <title>Pinguin</title>
+    <title>Pinguin - Map</title>
     <link rel="stylesheet" type="text/css" href="css/map.css">
     <script src="src/jquery.js"></script>
 </head>
@@ -38,11 +38,12 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
             </div>
             <input type="hidden" id="id_ID" name="id">
             <input type="hidden" name="username" id="username" value=<?php echo $username; ?>>
-            <button id="id_MapQuit">Return</button>
+            <button type="button" id="id_MapQuit">Return</button>
         </div>
         <button id="id_SubmitReq" type="button">Submit</button>
     </form>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmA9zcBCRDeh7PBXvxbNeTrm6KtaOWaY&callback=initMap"></script>
     <script type="text/javascript" src="js/map.js"></script>
+    <form action="mine.php" method="post" id="form_Mine"><input type="hidden" name="id" id="id_MineID"></form>
 </body>
 </html>

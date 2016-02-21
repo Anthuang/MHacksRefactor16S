@@ -50,7 +50,7 @@ form input {
     padding: 5px 5px 5px 20px;
     font-size: 20px;
 }
-form button {
+#id_SubmitButton {
     width: 90%;
     border: 1px solid #555;
     border-radius: 0px;
@@ -58,7 +58,7 @@ form button {
     background: #FFF;
     transition: all 0.2s linear 0s;
 }
-form button:hover {
+#id_SubmitButton:hover {
     background: #F80;
     border: 1px solid #FFF;
 }

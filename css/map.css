@@ -1,6 +1,6 @@
 html {
     background: #222;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 html, body {
     padding: 0;
@@ -48,6 +48,7 @@ button, input {
     color: #FFF;
     font-size: 20px;
     z-index: 2;
+    transition: background 0.2s linear 0s;
 }
 
 #id_UserReq:hover {
@@ -100,6 +101,7 @@ label {
     font-size: 20px;
     color: #FFF;
     background: #222;
+    transition: background 0.2s linear 0s;
 }
 #id_SubmitReq:hover {
     background: #00BFFF;
