@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link type = "text/css" rel = "stylesheet" href = "css/list.css" />
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
     <title>Pinguin - List</title>
