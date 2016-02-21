@@ -40,6 +40,8 @@ if (isset($_POST['id']) && !empty($_POST['id']) && isset($_POST['touser']) && !e
 
 echo <<<_END
 <form action="mine.php" method="post">
+	Item: $item.<br>
+	Date: $date. Time: $time.<br>
 	Question 1: <input type="text" value="$q1" id="q1"><input type="text" name="a1" value="$a1"><br>
 	Question 2: <input type="text" value="$q2" id="q2"><input type="text" name="a2" value="$a2"><br>
 	Question 3: <input type="text" value="$q3" id="q3"><input type="text" name="a3" value="$a3"><br>

@@ -47,23 +47,36 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
 $orderby = "MarkerIdx"; // default
 
 if (isset($_POST['selector']) && !empty($_POST['selector'])) $orderby = $_POST['selector'];
-$result = queryMysql('SELECT * FROM `LostAndFound` WHERE `User`="'.$username.'" ORDER BY `'.$orderby.'`');
+$result = queryMysql('SELECT * FROM `LostAndFound` ORDER BY `'.$orderby.'`');
 $num = $result->num_rows;
 if ($num > 0) {
 	for ($j = 0; $j < $num; $j++) {
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		$id = $row['MarkerIdx'];
+		$user = $row['User'];
+		$item = $row['Item'];
 		$lat = $row['Latitude'];
 		$lng = $row['Longitude'];
-		$item = $row['Item'];
 		$date = $row['MarkerDate'];
 		$time = $row['MarkerTime'];
 		$one = $row['One'];
 		$two = $row['Two'];
 		$three = $row['Three'];
 		$found = $row['Found'];
-		if ($found) echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
-		else echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
+		if ($found) {
+			if ($username == $user) {
+				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by You</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
+			} else {
+				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by '.$user.'</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
+			}
+		}
+		else {
+			if ($username == $user) {
+				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by You</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
+			} else {
+				echo '<ul>'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by '.$user.'</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
+			}
+		}
 	}
 }
 

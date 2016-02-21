@@ -87,7 +87,7 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
     </div>
     <div class="c_Section c_ImageWrapper">
         <img id="id_Demo" src="src/demo.png">
-        <div>See data on a map!</div>
+        <div>See lost and found data on a real map!</div>
     </div>
     <div class="c_Section">
         <a name="Contact">a</a>
