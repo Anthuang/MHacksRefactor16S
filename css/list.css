@@ -1,6 +1,57 @@
 html {
-	background: #222;
+	background-color: #EFEFEF;
 	overflow-x: hidden;
 	font-family: "Montserrat", helvetica;
+}
+
+ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    height: 100%;
+    width: 15%;
+    margin: 0%;
+}
+
+li:hover {
+    background: #00AEEE;
+}
+
+a {
+    color: #000;
+    line-height: 50px;
+}
+
+#id_Logo {
+    margin: 5px 0;
+    height: 90px;
+}
+
+#id_NavBar {
+    text-align: center;
+    height: 50px;
+    background: #00BFFF;
+    border-bottom: 2px solid #FFF;
+}
+
+#id_HeaderWrap {
+	width: 100%;
+	padding: 0 10px;
+	top: 0;
+	height: 100px;
+	background: #00BFFF;
+	border: none;
+	border-bottom: 1px solid #EFEFEF;
+	text-align: center;
+	z-index: 1;
+}
+
+
+body{
+	margin: 0;
 }
 

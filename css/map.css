@@ -116,6 +116,12 @@ label {
     padding: 5px 10px;
 }
 
+.class_MarkerEdit {
+    background-color: #00BFFF;
+    border-radius: 5px;
+    color: black;
+}
+
 .footer_class{
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
