@@ -67,14 +67,14 @@ if ($num > 0) {
 			if ($username == $user) {
 				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by You</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
 			} else {
-				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by '.$user.'</li><li><button class="class_EditButton" value=1>Edit this entry</button></li></ul>';
+				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Question 1: '.$one.'</li>'.'<li>Question 2: '.$two.'</li>'.'<li>Question 3: '.$three.'</li><li>Item Found by '.$user.'</li><li><button class="class_EditMine" value=1>This is mine.</button></li></ul>';
 			}
 		}
 		else {
 			if ($username == $user) {
 				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by You</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
 			} else {
-				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by '.$user.'</li><li><button class="class_EditButton" value=0>Edit this entry</button></li></ul>';
+				echo '<br><ul class="itemList">'.'<li class="class_ListID" value="'.$id.'">'.$id.'. '.$item.'</li>'.'<li class="class_ListLat">'.$lat.'</li><li class="class_ListLng">'.$lng.'</li>'.'<li>'.$date.' '.$time.'</li>'.'<li>Fact 1: '.$one.'</li>'.'<li>Fact 2: '.$two.'</li>'.'<li>Fact 3: '.$three.'</li><li>Item Lost by '.$user.'</li><li><button class="class_EditHave" value=0>I have it.</button></li></ul>';
 			}
 		}
 	}

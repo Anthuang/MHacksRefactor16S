@@ -46,7 +46,39 @@ select{
     padding-right: 3px;
 }
 
+.class_EditMine {
+	background-color: #00BFFF;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", helvetica;
+    border: none;
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.class_EditHave {
+	background-color: #00BFFF;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", helvetica;
+    border: none;
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 .class_EditButton:hover {
+	background: #00AEEE;
+}
+
+.class_EditMine:hover {
+	background: #00AEEE;
+}
+
+.class_EditHave:hover {
 	background: #00AEEE;
 }
 
