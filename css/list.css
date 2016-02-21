@@ -27,7 +27,7 @@ select{
 }
 
 .itemList > li{
-	-left: 10px;
+	margin-left: 10px;
 }
 
 .class_ListID {
@@ -141,5 +141,5 @@ body{
 }
 
 #main:hover {
-    background-color: #404040;
+    background-color: #00BFFF;
 }
