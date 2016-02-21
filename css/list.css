@@ -124,22 +124,22 @@ a {
 
 
 body{
-	margin: 5px;
+	margin: 0px;
 }
 
 #main{
     text-align: center;
     font-family: "Montserrat", helvetica;
-    font-size: 80px;
+    font-size: 40px;
 	margin: none;
     padding-top: 20px;
     padding-bottom: 20px;
 	height: 100px;
 	width: 100%;
-    font-color: white;
+    color: white;
     background-color: #1a1a1a;
 }
 
 #main:hover {
-    background-color: #1a1a1a;
+    background-color: #404040;
 }
