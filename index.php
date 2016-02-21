@@ -49,6 +49,7 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
     <title>Pinguin</title>
+    <link rel="shortcut icon" href="src/logowithouttext.png" />
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="src/jquery.js"></script>
@@ -69,7 +70,7 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
         <a name="About">a</a>
         <h1>About</h1>
         <div>Pinguin It is devoted to assist people in recovering or returning personal belongings that they either lost or found. We aim to provide a platform where people can
-         find their precious possessions easily, without having to resort to Facebook or Twitter. We provide a fast, secure, and reliable network, all to shorten the distance
+         find their precious possessions easily, without having to resort to Facebook or Twitter. We provide a fast, secure, and reliable network, all to shorten the distance 
          people and their lost belongings.</div>
     </div>
     <div class="c_Section">
@@ -99,6 +100,10 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
             </form>
         </div>
     </div>
+    <footer class="footer_class">
+        <p class="msg_footer">Enjoy your stay. Don't forget your belongings!</p>
+        <p class="info_footer">Pinguinit.net &#169; 2016</p>
+    </footer>
 </body>
 </html>
 
