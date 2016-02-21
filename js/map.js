@@ -110,7 +110,7 @@ function addMarkers(markers, map) {
                 contentString += '<input type="hidden" class="hidden_latitude" value='+loc.Latitude+'><input type="hidden" class="hidden_longitude" value='+loc.Longitude+'>';
                 contentString += '<input type="hidden" class="hidden_found" value='+loc.Found+'></div>';
             } else {
-                contentString += 'Item Lost by User: '+loc.User+'.<br><button>I have it.</button></div>';
+                contentString += 'Item Lost by User: '+loc.User+'.<br><button class="class_MarkerHave">I have it.</button></div>';
             }
         }
         attachInformation(marker, contentString);
