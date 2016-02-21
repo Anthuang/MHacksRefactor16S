@@ -34,8 +34,8 @@ window.initMap = function() {
 
         $.post("load.php", {username: $("#username").val()})
             .done(function (data) {
-            var testData = jQuery.parseJSON(data);
-            addMarkers(testData, map);
+                var testData = jQuery.parseJSON(data);
+                addMarkers(testData, map);
         });
 
         google.maps.event.addListenerOnce(map, 'idle', function(){
@@ -64,10 +64,13 @@ function addMarkers(markers, map) {
     for (var i = 0; i < markers.length; i++) {
         var loc = markers[i];
         var marker = new google.maps.Marker({
-            position: loc,
+            position: {lat: loc.Latitude, lng: loc.Longitude},
             map: map
         });
-        var contentString = '<div id="content">'+ loc.lat + ', ' + loc.lng + '</div>';
+        var contentString = '<div id="content">'+ loc.MarkerIdx +'. '+ loc.Item +'<br>Latitude: '+ loc.Latitude + ', Longitude: ' + loc.Longitude + '.<br>';
+        contentString += 'Date: '+ loc.MarkerDate + '. Time: '+ loc.MarkerTime + '.<br>';
+        if (loc.Found) contentString += 'Found.</div>';
+        else contentString += 'Lost.</div>';
         attachInformation(marker, contentString);
     }
 }
