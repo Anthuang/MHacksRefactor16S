@@ -17,7 +17,7 @@ label {
 
 select{
 	background: #00BFFF;
-	border-radius: 5px;
+	border-radius: 25px;
 	border: none;
 	padding: 2px;
 	padding-left: 4px;
@@ -36,7 +36,7 @@ select{
 
 .class_EditButton {
 	background-color: #00BFFF;
-    border-radius: 5px;
+    border-radius: 25px;
     color: white;
     text-align: center;
     font-family: "Montserrat", helvetica;
@@ -48,7 +48,7 @@ select{
 
 .class_EditMine {
 	background-color: #00BFFF;
-    border-radius: 5px;
+    border-radius: 25px;
     color: white;
     text-align: center;
     font-family: "Montserrat", helvetica;
@@ -60,7 +60,7 @@ select{
 
 .class_EditHave {
 	background-color: #00BFFF;
-    border-radius: 5px;
+    border-radius: 25px;
     color: white;
     text-align: center;
     font-family: "Montserrat", helvetica;
@@ -128,7 +128,18 @@ body{
 }
 
 #main{
+    text-align: center;
+    font-family: "Montserrat", helvetica;
+    font-size: 80px;
 	margin: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
 	height: 100px;
-	width; 100px
+	width: 100%;
+    font-color: white;
+    background-color: #1a1a1a;
+}
+
+#main:hover {
+    background-color: #1a1a1a;
 }
