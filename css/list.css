@@ -26,12 +26,28 @@ select{
 	text-align: center;
 }
 
-.itemList > li{
-	margin-left: 10px;
+#back2top {
+    position: fixed;
+    color: black;
+    background-color: #ffff00;
+    height:3.125em;
+    width: 3.125em;
+    border: 0.063em solid black;
+    float: right;
+}
+
+#back2top:hover {
+    border: 0.063em solid white;
+    background-color: #00BFFF;
+}
+
+ul.itemList > li{
+	text-indent: 1.250em;
 }
 
 .class_ListID {
 	font-weight: bold;
+    text-decoration: underline;
 }
 
 .class_EditButton {
@@ -129,11 +145,11 @@ body{
 #main{
     text-align: center;
     font-family: "Montserrat", helvetica;
-    font-size: 40px;
+    font-size: 2.500em;
 	margin: none;
-    margin-top: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 0.625em;
+    padding-top: 1.250em;
+    padding-bottom: 1.250em;
 	height: 100px;
 	width: 100%;
     color: white;

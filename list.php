@@ -17,10 +17,9 @@
     <div id="id_NavBar">
         <ul>
             <a href="map.php"><li class="c_NavItem">Map</li></a>
-            <a href="#Contact"><li class="c_NavItem">Contact Us</li></a>
         </ul>
     </div>
-<div id="back2top" action= "#">TOP</div>
+<a href="#"><button id="back2top">TOP</button></a>
 <form action="list.php" method="post">
 	<label>Ordering: </label><select name="selector">
 	  <option value="MarkerIdx">ID</option>
