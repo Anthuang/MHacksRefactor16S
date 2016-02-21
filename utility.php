@@ -3,7 +3,7 @@
 $db_hostname = "localhost";
 $db_database = "MHacksRefactor16s";
 $db_username = "root";
-$db_password = "";
+$db_password = "root";
 
 $connection = new mysqli($db_hostname, $db_username, $db_password, $db_database); // connection to database
 if ($connection->connect_error) die($connection->connect_error);
