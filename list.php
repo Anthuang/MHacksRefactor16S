@@ -89,7 +89,7 @@ if ($num > 0) {
     <input type="hidden" name="username" value=<?php echo $username; ?>>
 </form>
 
-<form action="index.php"><button>Back to Main Page</button></form>
+<form action="index.php"><button id="main">Back to Main Page</button></form>
 
 </body>
 </html>
