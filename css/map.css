@@ -65,15 +65,17 @@ button, input {
     position: relative;
     top: 100px;
     transition: all 0.5s linear 0s;
+    background: #555;
+    opacity: 0.85;
 }
 .c_ReqReturn {
     top: 0 !important;
 }
 input[type=text] {
     font-size: 20px;
-    color: #000;
-    opacity: 0.8;
-    width: 15%;
+    background: none;
+    color: #FFF;
+    width: 10%;
     height: 30%;
     margin: 0;
     padding: 5px 10px 5px 30px;
@@ -81,7 +83,7 @@ input[type=text] {
 }
 label {
     font-size: 20px;
-    color: #333;
+    color: #FFF;
     font-family: helvetica;
 }
 #id_ReqLat {
@@ -108,7 +110,6 @@ label {
 
 #id_RadioWrap {
     display: inline-block;
-    background: #FFF;
     opacity: 0.8;
     padding: 5px 10px;
 }
@@ -140,4 +141,15 @@ label {
 
 footer {
     bottom: 0;
+}
+
+#id_MapQuit {
+    font-size: 15px;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    color: #FFF;
+}
+#id_MapQuit:hover {
+    background: #888;
 }

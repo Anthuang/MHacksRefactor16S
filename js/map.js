@@ -24,7 +24,6 @@ window.initMap = function() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
         };
-        var coordInit = {lat: 42.279594, lng: -83.732124};
         var userReq = document.getElementById("id_UserReq");
 
         var map = new google.maps.Map(document.getElementById('id_MapDiv'), {
@@ -43,11 +42,11 @@ window.initMap = function() {
         })
 
         userReq.addEventListener('click', function (e) {
-            map.setCenter(pos);
-            document.getElementById('id_ReqLat').value = pos.lat.toFixed(3);
-            document.getElementById('id_ReqLng').value = pos.lng.toFixed(3);
+            // map.setCenter(pos);
+            document.getElementById('id_ReqLat').value = map.getCenter().lat().toFixed(3);
+            document.getElementById('id_ReqLng').value = map.getCenter().lng().toFixed(3);
             var marker = new google.maps.Marker({
-                position: pos,
+                position: map.getCenter(),
                 map: map,
                 draggable:true
             });

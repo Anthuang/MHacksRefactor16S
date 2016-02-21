@@ -30,14 +30,15 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
     <button id="id_UserReq" disabled="true">Make a request</button>
     <form id="id_ReqForm" action="found.php" method="post">
         <div id="id_ReqWrap">
-            <input type="text" placeholder="Latitude" name="lat" id="id_ReqLat"></input>
-            <input type="text" placeholder="Longitude" name="lng" id="id_ReqLng"></input>
+            <label>Latitude:</label><input type="text" placeholder="Latitude" name="lat" id="id_ReqLat"></input>
+            <label>Longitude:</label><input type="text" placeholder="Longitude" name="lng" id="id_ReqLng"></input>
             <div id="id_RadioWrap">
                 <label>Lost: </label><input id="id_RadLost" type="radio" name="status" value="Lost" checked>
                 <label>Found: </label><input id="id_RadFound" type="radio" name="status" value="Found">
             </div>
             <input type="hidden" id="id_ID" name="id">
             <input type="hidden" name="username" id="username" value=<?php echo $username; ?>>
+            <button id="id_MapQuit">Return</button>
         </div>
         <button id="id_SubmitReq" type="button">Submit</button>
     </form>
