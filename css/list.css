@@ -10,14 +10,14 @@ ul {
     padding: 0;
 }
 
-li {
+#id_NavBar > ul > li {
     display: inline-block;
     height: 100%;
     width: 15%;
     margin: 0%;
 }
 
-li:hover {
+#id_NavBar > ul > li:hover {
     background: #00AEEE;
 }
 
