@@ -20,6 +20,7 @@
             <a href="#Contact"><li class="c_NavItem">Contact Us</li></a>
         </ul>
     </div>
+<div id="back2top" action= "#">TOP</div>
 <form action="list.php" method="post">
 	<label>Ordering: </label><select name="selector">
 	  <option value="MarkerIdx">ID</option>
