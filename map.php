@@ -20,6 +20,7 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
     <title>Pinguin - Map</title>
     <link rel="stylesheet" type="text/css" href="css/map.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="src/jquery.js"></script>
 </head>
 <body>

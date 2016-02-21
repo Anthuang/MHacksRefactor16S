@@ -119,7 +119,14 @@ label {
 .class_MarkerEdit {
     background-color: #00BFFF;
     border-radius: 5px;
-    color: black;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", helvetica;
+    border: none;
+}
+
+.class_MarkerEdit:hover {
+    background-color: #00AEEE;
 }
 
 .footer_class{

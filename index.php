@@ -92,7 +92,7 @@ if (isset($_POST['is_signup']) && !empty($_POST['is_signup'])) {
     <div class="c_Section">
         <a name="Contact">a</a>
         <h1>Contact Us</h1>
-        <div>Pinguin It is founded by <br>Anthony Huang anthuang@umich.edu,<br>Thomas Huang thomaseh@umich.edu,<br>and Anton Yang ayangz@umich.edu.<br>
+        <div>Pinguin It is founded by <br>Anthony Huang anthuang@umich.edu<br>Thomas Huang thomaseh@umich.edu<br>Anton Yang ayangz@umich.edu.<br>
         Contact us if you have any questions or suggestions!</div>
     </div>
 
