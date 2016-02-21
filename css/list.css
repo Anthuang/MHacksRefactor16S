@@ -55,11 +55,13 @@ select{
 }
 
 .itemList{
+    font-size:30px;
     margin-left:45%;
     text-align: center;
 }
 
 .class_ListID {
+    font-size: 40px;
     font-weight: bold;
     text-decoration: underline;
 }
