@@ -44,6 +44,9 @@ if (!isset($_SESSION['username'])) { // if not, user is not signed in
     </form>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmA9zcBCRDeh7PBXvxbNeTrm6KtaOWaY&callback=initMap"></script>
     <script type="text/javascript" src="js/map.js"></script>
-    <form action="mine.php" method="post" id="form_Mine"><input type="hidden" name="id" id="id_MineID"></form>
+    <form action="mine.php" method="post" id="form_Mine">
+        <input type="hidden" name="id" id="id_MineID">
+        <input type="hidden" name="touser" id="id_Hiddentouser">
+    </form>
 </body>
 </html>

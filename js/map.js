@@ -35,7 +35,8 @@ $(document).ready(function() {
     })
 
     $(document).on("click", ".class_MarkerMine", function() {
-        $("#id_MineID").val($(this).val());
+        $("#id_MineID").val($(this).attr("id"));
+        $("#id_Hiddentouser").val($(this).siblings("#id_touser").val())
         $("#form_Mine").submit();
     })
 })
@@ -96,11 +97,11 @@ function addMarkers(markers, map) {
         contentString += 'Date: '+ loc.MarkerDate + '. Time: '+ loc.MarkerTime + '.<br>';
         if (loc.Found) {
             if (loc.User == $("#username").val()) {
-                contentString += 'Item Found by You.<br><button class="class_MarkerEdit" id='+loc.MarkerIdx+'>Edit this entry</button>';
+                contentString += 'Item Found by You.<br><button class="class_MarkerEdit" value='+loc.MarkerIdx+'>Edit this entry</button>';
                 contentString += '<input type="hidden" class="hidden_latitude" value='+loc.Latitude+'><input type="hidden" class="hidden_longitude" value='+loc.Longitude+'>';
                 contentString += '<input type="hidden" class="hidden_found" value='+loc.Found+'></div>';
             } else {
-                contentString += 'Item Found by User: '+loc.User+'.<br><button class="class_MarkerMine" id='+loc.MarkerIdx+'>This is mine.</button></div>';
+                contentString += 'Item Found by User: '+loc.User+'.<br><button class="class_MarkerMine" id='+loc.MarkerIdx+'>This is mine.</button><input type="hidden" value='+loc.User+' id="id_touser"></div>';
             }
         }
         else {

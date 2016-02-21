@@ -12,7 +12,7 @@
 </head>
 <body>
 <header id="id_HeaderWrap">
-        <img id="id_Logo" src="src/logo.png"/>
+        <a href="index.php"><img id="id_Logo" src="src/logo.png"/></a>
     </header>
     <div id="id_NavBar">
         <ul>
@@ -29,7 +29,7 @@
 	<button>Enter</button>
 </form>
 
-<!-- <?php
+<?php
 
 require_once "utility.php";
 
@@ -67,7 +67,7 @@ if ($num > 0) {
 	}
 }
 
-?> -->
+?>
 
 <form id="id_ListForm" action="found.php" method="post">
     <input type="hidden" name="lat" id="id_ReqLat">
